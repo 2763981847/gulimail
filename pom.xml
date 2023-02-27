@@ -14,6 +14,9 @@
     <name>gulimall</name>
     <description>gulimall</description>
     <packaging>pom</packaging>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
     <modules>
         <module>gulimall-coupon</module>
         <module>gulimall-member</module>
@@ -24,7 +27,5 @@
         <module>renren-generator</module>
         <module>gulimall-common</module>
     </modules>
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+
 </project>

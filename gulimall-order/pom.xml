@@ -11,10 +11,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>gulimall-order</name>
     <description>gulimall-order</description>
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>2022.0.0</spring-cloud.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>com.oreki</groupId>
@@ -37,17 +33,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>
