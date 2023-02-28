@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: dad
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url,baidu
+        - id: after_route
+          uri: https://www.google.com
+          predicates:
+            - Query=url,google
+    nacos:
+      discovery:
+        server-addr: ${TENCENT_HOST}:8848
+  application:
+    name: gulimall-gateway
+server:
+  port: 88
