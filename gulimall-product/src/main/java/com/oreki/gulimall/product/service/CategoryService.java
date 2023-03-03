@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.oreki.common.utils.PageUtils;
 import com.oreki.gulimall.product.entity.CategoryEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,6 +16,12 @@ import java.util.Map;
  */
 public interface CategoryService extends IService<CategoryEntity> {
 
-    PageUtils queryPage(Map<String, Object> params);
+
+    /**
+     * 查出所有分类及其子分类，并以树形结构组装起来
+     *
+     * @return
+     */
+    List<CategoryEntity> listByTree();
 }
 
