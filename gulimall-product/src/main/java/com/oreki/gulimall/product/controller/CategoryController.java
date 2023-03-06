@@ -5,11 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.oreki.gulimall.product.entity.CategoryEntity;
 import com.oreki.gulimall.product.service.CategoryService;
@@ -33,10 +29,10 @@ public class CategoryController {
     /**
      * 查出所有分类及其子分类，并以树形结构组装起来
      */
-    @RequestMapping("/list/tree")
+    @GetMapping("/list/tree")
     public R listByTree() {
         List<CategoryEntity> categoryEntities = categoryService.listByTree();
-        return R.ok().put("data",categoryEntities);
+        return R.ok().put("data", categoryEntities);
     }
 
 
@@ -76,11 +72,9 @@ public class CategoryController {
     /**
      * 删除
      */
-    @RequestMapping("/delete")
-    //@RequiresPermissions("product:category:delete")
+    @PostMapping("/delete")
     public R delete(@RequestBody Long[] catIds) {
-        categoryService.removeByIds(Arrays.asList(catIds));
-
+        categoryService.deleteByIds(Arrays.asList(catIds));
         return R.ok();
     }
 

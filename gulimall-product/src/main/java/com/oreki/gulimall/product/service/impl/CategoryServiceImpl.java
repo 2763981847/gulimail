@@ -31,6 +31,12 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         return getChildren(0L);
     }
 
+    @Override
+    public void deleteByIds(List<Long> catIds) {
+        // todo 检查是否被引用
+        this.removeByIds(catIds);
+    }
+
     private List<CategoryEntity> getChildren(Long parentCid) {
         List<CategoryEntity> categoryEntities = this.lambdaQuery().list();
         return categoryEntities.stream()
